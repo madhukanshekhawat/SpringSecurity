@@ -7,49 +7,71 @@ import org.springframework.stereotype.Component;
 
 @Data
 public class Products {
-    String name;
-    int androidVersion;
-    String processor;
-
-    public Products(String name, int androidVersion, String processor) {
-        this.name = name;
-        this.androidVersion = androidVersion;
-        this.processor = processor;
-    }
+    int id ;
+    String mobileBrand;
+    String mobileModel;
+    String mobileOS;
+    int mobileDate;
 
     public Products() {
+    }
+
+    public Products(int id, String mobileBrand, String mobileModel, String mobileOS, int mobileDate) {
+        this.id = id;
+        this.mobileBrand = mobileBrand;
+        this.mobileModel = mobileModel;
+        this.mobileOS = mobileOS;
+        this.mobileDate = mobileDate;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getMobileBrand() {
+        return mobileBrand;
+    }
+
+    public void setMobileBrand(String mobileBrand) {
+        this.mobileBrand = mobileBrand;
+    }
+
+    public String getMobileModel() {
+        return mobileModel;
+    }
+
+    public void setMobileModel(String mobileModel) {
+        this.mobileModel = mobileModel;
+    }
+
+    public String getMobileOS() {
+        return mobileOS;
+    }
+
+    public void setMobileOS(String mobileOS) {
+        this.mobileOS = mobileOS;
+    }
+
+    public int getMobileDate() {
+        return mobileDate;
+    }
+
+    public void setMobileDate(int mobileDate) {
+        this.mobileDate = mobileDate;
     }
 
     @Override
     public String toString() {
         return "Products{" +
-                "name='" + name + '\'' +
-                ", androidVersion=" + androidVersion +
-                ", processor='" + processor + '\'' +
+                "id=" + id +
+                ", mobileBrand='" + mobileBrand + '\'' +
+                ", mobileModel='" + mobileModel + '\'' +
+                ", mobileOS='" + mobileOS + '\'' +
+                ", mobileDate=" + mobileDate +
                 '}';
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAndroidVersion() {
-        return androidVersion;
-    }
-
-    public void setAndroidVersion(int androidVersion) {
-        this.androidVersion = androidVersion;
-    }
-
-    public String getProcessor() {
-        return processor;
-    }
-
-    public void setProcessor(String processor) {
-        this.processor = processor;
     }
 }
