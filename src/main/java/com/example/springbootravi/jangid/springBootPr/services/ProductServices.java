@@ -1,6 +1,7 @@
 package com.example.springbootravi.jangid.springBootPr.services;
 
 import com.example.springbootravi.jangid.springBootPr.models.Products;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -27,11 +28,13 @@ public class ProductServices {
                 .findFirst().orElse(new Products("new Phone",15,"qualcom demensity"));
     }
 
+    @Autowired
+    MobileService mobileService;
     public void settingProduct(Products product) {
         productsList.add(product);
+        mobileService.fetchData(product);
+
     }
-
-
 
     public int giveIndex(String mobile){
         int index=0;
@@ -53,9 +56,12 @@ public class ProductServices {
 
     public void updateData(Products products) {
 
+        mobileService.updateDataInDb(products);
         int check = giveIndex(products.getName());
         if(check>=0){
             productsList.set(check,products);
+
+
         }else{
             System.out.println("Data not Found...");
         }

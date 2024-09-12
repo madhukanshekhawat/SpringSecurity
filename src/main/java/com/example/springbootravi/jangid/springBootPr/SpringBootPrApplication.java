@@ -1,6 +1,7 @@
 package com.example.springbootravi.jangid.springBootPr;
 
 import com.example.springbootravi.jangid.springBootPr.classess.InterClass;
+import com.example.springbootravi.jangid.springBootPr.services.MobileService;
 import com.example.springbootravi.jangid.springBootPr.subClasses.ClassOne;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,8 +15,9 @@ public class SpringBootPrApplication {
 
 		ApplicationContext applicationContext = SpringApplication.run(SpringBootPrApplication.class, args);
 
-		InterClass interClass = applicationContext.getBean(InterClass.class);
-		interClass.interFunction();
+//		MobileService mobileClass = applicationContext.getBean(MobileService.class);
+//		mobileClass.fetchData();
 	}
+
 
 }
