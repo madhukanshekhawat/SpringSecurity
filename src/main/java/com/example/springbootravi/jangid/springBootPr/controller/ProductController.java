@@ -4,10 +4,12 @@ package com.example.springbootravi.jangid.springBootPr.controller;
 import com.example.springbootravi.jangid.springBootPr.models.Products;
 import com.example.springbootravi.jangid.springBootPr.services.ProductServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-@RestController
+
+//@RestController
 public class ProductController {
 
     @Autowired
