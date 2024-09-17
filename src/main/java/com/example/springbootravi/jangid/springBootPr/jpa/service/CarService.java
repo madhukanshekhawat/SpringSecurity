@@ -12,6 +12,7 @@ public class CarService {
 
     @Autowired
     CarRepo repository;
+    
     public void addCarInfo(CarInfo carInfo) {
         repository.save(carInfo);
 
@@ -19,5 +20,10 @@ public class CarService {
 
     public List<CarInfo> getCarInfo() {
         return repository.findAll();
+    }
+
+
+    public void deleteCarInfo(int id) {
+         repository.deleteById(id);
     }
 }

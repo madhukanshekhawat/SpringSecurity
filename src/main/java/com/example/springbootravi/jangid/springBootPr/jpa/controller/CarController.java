@@ -24,4 +24,10 @@ public class CarController {
         carService.addCarInfo(carInfo);
     }
 
+    @DeleteMapping("/deleteCarInfo/{id}")
+    public void removeCarInfo(@PathVariable int id){
+        carService.deleteCarInfo(id);
+
+    }
+
 }

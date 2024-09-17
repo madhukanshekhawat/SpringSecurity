@@ -3,10 +3,12 @@ package com.example.springbootravi.jangid.springBootPr.jpa.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
+
 @Scope("prototype")
 @Entity
 public class CarInfo {
@@ -16,6 +18,10 @@ public class CarInfo {
     String carModel;
     int launchDate;
     String country;
+
+    @OneToOne
+    @JoinColumn(name="person_id")
+     PersonInfo personInfo;
 
     public int getId() {
         return id;
