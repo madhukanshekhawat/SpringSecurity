@@ -1,20 +1,16 @@
 package com.example.springbootravi.jangid.springBootPr.jpa.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 
-@Scope("prototype")
 @Entity
 public class CarInfo {
     @Id
     int id;
-    String carBrand;
+    private String carBrand;
     String carModel;
     int launchDate;
     String country;
@@ -22,6 +18,18 @@ public class CarInfo {
     @OneToOne
     @JoinColumn(name="person_id")
      PersonInfo personInfo;
+
+    public CarInfo(int id, String carBrand, String carModel, int launchDate, String country, PersonInfo personInfo) {
+        this.id = id;
+        this.carBrand = carBrand;
+        this.carModel = carModel;
+        this.launchDate = launchDate;
+        this.country = country;
+        this.personInfo = personInfo;
+    }
+
+    public CarInfo() {
+    }
 
     public int getId() {
         return id;
@@ -63,4 +71,11 @@ public class CarInfo {
         this.country = country;
     }
 
+    public PersonInfo getPersonInfo() {
+        return personInfo;
+    }
+
+    public void setPersonInfo(PersonInfo personInfo) {
+        this.personInfo = personInfo;
+    }
 }

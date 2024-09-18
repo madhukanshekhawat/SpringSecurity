@@ -1,4 +1,4 @@
-package com.example.springbootravi.jangid.springBootPr.jpa.services;
+package com.example.springbootravi.jangid.springBootPr.jpa.repository;
 
 import com.example.springbootravi.jangid.springBootPr.jpa.model.PersonInfo;
 import org.springframework.data.jpa.repository.JpaRepository;

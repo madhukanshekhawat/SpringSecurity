@@ -1,7 +1,7 @@
 package com.example.springbootravi.jangid.springBootPr.jpa.service;
 
 import com.example.springbootravi.jangid.springBootPr.jpa.model.CarInfo;
-import com.example.springbootravi.jangid.springBootPr.jpa.services.CarRepo;
+import com.example.springbootravi.jangid.springBootPr.jpa.repository.CarRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -1,10 +1,10 @@
 package com.example.springbootravi.jangid.springBootPr.jpa.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import org.apache.catalina.startup.HomesUserDatabase;
 import org.springframework.context.annotation.Scope;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Scope("prototype")
@@ -13,15 +13,23 @@ public class PersonInfo {
     @Id
     int id;
     String personName;
-    String personAge;
+    int personAge;
 
-    @OneToOne
+    @OneToOne(mappedBy = "personInfo",cascade = CascadeType.ALL)
      CarInfo carInfo;
 
-    public PersonInfo(int id, String personName, String personAge) {
+    @OneToMany(mappedBy ="personInfo",cascade = CascadeType.ALL)
+    List<HouseInfo> house = new ArrayList<>();
+
+    public PersonInfo() {
+    }
+
+    public PersonInfo(int id, String personName, int personAge, CarInfo carInfo, List<HouseInfo> house) {
         this.id = id;
         this.personName = personName;
         this.personAge = personAge;
+        this.carInfo = carInfo;
+        this.house = house;
     }
 
     public int getId() {
@@ -40,11 +48,27 @@ public class PersonInfo {
         this.personName = personName;
     }
 
-    public String getPersonAge() {
+    public int getPersonAge() {
         return personAge;
     }
 
-    public void setPersonAge(String personAge) {
+    public void setPersonAge(int personAge) {
         this.personAge = personAge;
+    }
+
+    public CarInfo getCarInfo() {
+        return carInfo;
+    }
+
+    public void setCarInfo(CarInfo carInfo) {
+        this.carInfo = carInfo;
+    }
+
+    public List<HouseInfo> getHouse() {
+        return house;
+    }
+
+    public void setHouse(List<HouseInfo> house) {
+        this.house = house;
     }
 }
